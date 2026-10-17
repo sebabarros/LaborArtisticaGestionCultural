@@ -73,10 +73,10 @@ async function downloadDeck(){
   const label=downloadButton.textContent;downloadButton.disabled=true;downloadButton.textContent='Preparando…';
   try{
     const doc=new DOMParser().parseFromString(`<!doctype html>${sourceMarkup}`,'text/html');
-    const cssLink=doc.querySelector('link[href="styles.css"]');
-    if(cssLink){const response=await fetch('styles.css');if(!response.ok)throw new Error('CSS');const style=doc.createElement('style');style.setAttribute('data-deck-style','');style.textContent=await response.text();cssLink.replaceWith(style)}
-    const scriptTag=doc.querySelector('script[src="script.js"]');
-    if(scriptTag){const response=await fetch('script.js');if(!response.ok)throw new Error('JS');const script=doc.createElement('script');script.setAttribute('data-deck-script','');script.textContent=await response.text();scriptTag.remove();doc.body.append(script)}
+    const cssLink=doc.querySelector('link[href^="styles.css"]');
+    if(cssLink){const response=await fetch(cssLink.getAttribute('href'));if(!response.ok)throw new Error('CSS');const style=doc.createElement('style');style.setAttribute('data-deck-style','');style.textContent=await response.text();cssLink.replaceWith(style)}
+    const scriptTag=doc.querySelector('script[src^="script.js"]');
+    if(scriptTag){const response=await fetch(scriptTag.getAttribute('src'));if(!response.ok)throw new Error('JS');const script=doc.createElement('script');script.setAttribute('data-deck-script','');script.textContent=await response.text();scriptTag.remove();doc.body.append(script)}
     const portrait=doc.querySelector('img[src="saga.jpg"]');
     if(portrait){const response=await fetch('saga.jpg');if(!response.ok)throw new Error('portrait');portrait.src=await fileAsDataUrl(await response.blob())}
     let data=doc.getElementById('embedded-media');if(!data){data=doc.createElement('script');data.id='embedded-media';data.type='application/json';doc.body.append(data)}
