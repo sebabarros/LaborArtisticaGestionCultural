@@ -77,8 +77,12 @@ async function downloadDeck(){
     if(cssLink){const response=await fetch(cssLink.getAttribute('href'));if(!response.ok)throw new Error('CSS');const style=doc.createElement('style');style.setAttribute('data-deck-style','');style.textContent=await response.text();cssLink.replaceWith(style)}
     const scriptTag=doc.querySelector('script[src^="script.js"]');
     if(scriptTag){const response=await fetch(scriptTag.getAttribute('src'));if(!response.ok)throw new Error('JS');const script=doc.createElement('script');script.setAttribute('data-deck-script','');script.textContent=await response.text();scriptTag.remove();doc.body.append(script)}
-    const portrait=doc.querySelector('img[src="saga.jpg"]');
-    if(portrait){const response=await fetch('saga.jpg');if(!response.ok)throw new Error('portrait');portrait.src=await fileAsDataUrl(await response.blob())}
+    for(const image of doc.querySelectorAll('img[src]')){
+      const src=image.getAttribute('src');
+      if(!src||/^(?:data:|https?:|blob:)/i.test(src))continue;
+      const response=await fetch(src);if(!response.ok)throw new Error(`image: ${src}`);
+      image.src=await fileAsDataUrl(await response.blob());
+    }
     let data=doc.getElementById('embedded-media');if(!data){data=doc.createElement('script');data.id='embedded-media';data.type='application/json';doc.body.append(data)}
     data.textContent=JSON.stringify(mediaBySlide).replace(/</g,'\\u003c');
     const executable=doc.querySelector('script[data-deck-script]');if(executable)doc.body.append(executable);
@@ -87,10 +91,10 @@ async function downloadDeck(){
   }catch{alert('No se pudo preparar la descarga. Probá de nuevo con conexión a internet.')}
   finally{downloadButton.disabled=false;downloadButton.textContent=label}
 }
-slides.forEach((slide,index)=>{const button=document.createElement('button'),number=document.createElement('span');number.textContent=String(index+1).padStart(2,'0');button.append(number,document.createTextNode(titleOf(slide)));button.addEventListener('click',()=>{overview.close();go(index)});overviewList.append(button)});
+slides.forEach((slide,index)=>{slide.setAttribute('aria-label',`Diapositiva ${index+1} de ${slides.length}`);const button=document.createElement('button'),number=document.createElement('span');number.textContent=String(index+1).padStart(2,'0');button.append(number,document.createTextNode(titleOf(slide)));button.addEventListener('click',()=>{overview.close();go(index)});overviewList.append(button)});
 function render(){slides.forEach((slide,index)=>{slide.hidden=index!==current;slide.classList.toggle('is-active',index===current)});counter.textContent=`${current+1} / ${slides.length}`;progress.style.width=`${((current+1)/slides.length)*100}%`;prev.disabled=current===0;next.disabled=current===slides.length-1;notesContent.textContent=slides[current].querySelector('.speaker-notes')?.textContent.trim()||'';document.title=`${titleOf(slides[current])} · Labor artística y gestión cultural`}
-function go(index){current=Math.max(0,Math.min(slides.length-1,index));history.replaceState(null,'',`#slide-${current+1}`);render()}
-function readHash(){const match=location.hash.match(/^#slide-(\d+)$/);current=match?Math.max(0,Math.min(slides.length-1,Number(match[1])-1)):0;render()}
+function go(index){current=Math.max(0,Math.min(slides.length-1,index));history.replaceState(null,'',`#${slides[current].id}`);render()}
+function readHash(){const index=slides.findIndex(slide=>`#${slide.id}`===location.hash);current=index>=0?index:0;render()}
 prev.addEventListener('click',()=>go(current-1));next.addEventListener('click',()=>go(current+1));
 document.getElementById('overview-button').addEventListener('click',()=>overview.showModal());
 document.getElementById('overview-close').addEventListener('click',()=>overview.close());

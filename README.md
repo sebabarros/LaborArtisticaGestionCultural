@@ -5,7 +5,7 @@ Presentación web de Saga Barros: 26 diapositivas con la apertura y dos bloques.
 - **Labor artística:** generalismo e IA, trayectorias profesionales, industrias culturales y economía del conocimiento.
 - **Gestión cultural:** lenguajes y lógicas de distintos campos, traducción entre sectores, vínculos sostenibles, gestión de proyectos, liderazgo y delegación. Cierre: aprender inglés e IA.
 
-El bloque 2 comienza en la diapositiva 15. Las notas desarrollan los ejemplos y las ideas de la clase. La expresión «el 80% es un exitazo» se refiere a aceptar una forma de trabajo diferente a la propia; el resultado acordado sigue siendo el criterio de evaluación.
+El bloque 2 comienza en la diapositiva 14. Las notas desarrollan los ejemplos y las ideas de la clase. Tras la diapositiva sobre delegación aparecen los casos de «En el Nombre de la Ley» y Visión Norte. La expresión «el 80% es un exitazo» se refiere a aceptar una forma de trabajo diferente a la propia; el resultado acordado sigue siendo el criterio de evaluación.
 
 ## Uso
 
@@ -17,4 +17,4 @@ En la diapositiva que quieras modificar, pulsá **Material** (o `M`). Podés ele
 
 Los cambios se guardan en el navegador donde los hiciste. Pulsá **Descargar** para obtener una copia HTML autónoma con las fotos incorporadas. Los videos por enlace necesitan conexión para reproducirse. Si querés publicar los cambios para todo el público, subí esa copia al repositorio con el nombre `index.html`, reemplazando el archivo actual.
 
-Las fuentes de las afirmaciones históricas, legales y sobre trabajo e IA están enlazadas en las notas de cada diapositiva. La fotografía de Saga Barros fue proporcionada por la persona usuaria.
+Las fuentes de las afirmaciones históricas, legales y sobre trabajo e IA están enlazadas en las notas de cada diapositiva. Las fotografías de MICA proceden de la Secretaría de Cultura de la Nación. La fotografía de Saga Barros y las de Visión Norte fueron proporcionadas por la persona usuaria.

@@ -39,3 +39,41 @@ dialog,.notes-panel{background:#182034;color:var(--ink);border:1px solid var(--l
 @media(max-width:900px){.slide-inner.has-media{grid-template-columns:1fr;gap:1.3rem}.has-media .slide-copy{max-width:100%}.slide-media-stage{width:min(100%,660px)}.media-frame{aspect-ratio:16/9}.has-media .portrait{height:30vh}.has-media .intersection{height:min(32vw,190px)}}
 @media(max-width:760px){.topbar{align-items:flex-start}.brand{max-width:30vw}.topbar-actions{flex-wrap:wrap;justify-content:flex-end}.topbar-actions button{font-size:.7rem}.slide-inner.has-media{padding-block:1rem}.has-media h1{font-size:clamp(2.7rem,9vw,4.8rem)}.has-media h2,.has-media .slide-section h2{font-size:clamp(2.3rem,8vw,4.2rem)}.media-frame{aspect-ratio:16/9}}
 @media print{.slide-inner.has-media{grid-template-columns:1fr 1fr}.media-carousel{display:none}}
+
+/* Revised examples and field comparisons. */
+.slide-section#slide-9 h2{font-size:clamp(3.2rem,6.1vw,6.6rem);margin-bottom:.65rem}
+#slide-9 .lede{font-size:clamp(1.15rem,1.8vw,1.8rem);max-width:56ch;margin:0 0 1rem}
+.mica-gallery,.vision-gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:1100px;margin-top:1.2rem}
+.mica-gallery figure,.vision-gallery figure{margin:0;min-width:0}
+.mica-gallery img,.vision-gallery img{display:block;width:100%;height:clamp(170px,29vh,310px);object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.mica-gallery figcaption,.vision-gallery figcaption{font-size:.9rem;color:var(--muted);margin-top:.45rem}
+.slide-solari h2{font-size:clamp(2.7rem,5vw,5.2rem);max-width:20ch;margin-bottom:1.5rem}
+.slide-solari blockquote{font-size:clamp(1.5rem,2.55vw,2.75rem);max-width:52ch;line-height:1.22;padding-left:1.3rem;border-left:4px solid var(--lime)}
+.slide-moria h2{font-size:clamp(2.7rem,5vw,5rem);max-width:21ch;margin-bottom:1.1rem}
+.slide-moria .statement{font-size:clamp(1.5rem,2.4vw,2.5rem);max-width:45ch;margin-bottom:.5rem}
+.slide-moria .small-copy{font-size:clamp(1rem,1.2vw,1.25rem);margin:.2rem 0 1.4rem}
+.slide-moria blockquote{font-size:clamp(1.4rem,2.1vw,2.3rem);max-width:55ch;line-height:1.25;padding-left:1.2rem;border-left:4px solid var(--blue);margin-bottom:.6rem}
+.slide-knowledge h2{font-size:clamp(2.8rem,5.3vw,5.6rem);max-width:23ch}
+.knowledge-columns{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:clamp(1.5rem,4vw,4rem);align-items:start}
+.slide-knowledge .statement{font-size:clamp(1.7rem,2.8vw,3rem);max-width:25ch}
+.slide-knowledge .small-copy{font-size:clamp(1rem,1.3vw,1.3rem)}
+.definition{border-top:4px solid var(--lime);background:rgba(199,244,100,.08);padding:1.5rem}
+.definition span{display:block;color:var(--lime);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.2rem}
+.definition p{font-size:clamp(1.4rem,2vw,2.2rem);line-height:1.3;margin:0}
+.slide-languages h2{font-size:clamp(2.6rem,4.8vw,5rem);max-width:24ch;margin-bottom:1rem}
+.language-common{font-size:clamp(1.3rem,2vw,2rem);max-width:60ch;color:var(--ink);margin-bottom:1.2rem}
+.language-fields{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:1180px}
+.language-fields>div{border-top:3px solid var(--blue);background:rgba(92,200,255,.07);padding:1rem 1.2rem}
+.language-fields>div:nth-child(2){border-color:var(--lime);background:rgba(199,244,100,.07)}
+.language-fields h3{font-size:clamp(1.25rem,1.8vw,1.8rem);margin:0 0:.5rem;color:var(--blue)}
+.language-fields>div:nth-child(2) h3{color:var(--lime)}
+.language-fields p{font-size:clamp(1.05rem,1.35vw,1.35rem);color:var(--muted);margin:0}
+.language-bridge{font-size:clamp(1rem,1.4vw,1.4rem);color:var(--ink);border-top:1px solid var(--line);padding-top:.8rem;margin:1rem 0 0;max-width:75ch}
+.slide-case h2{font-size:clamp(3.2rem,6vw,6.8rem);max-width:22ch;margin-bottom:1.2rem}
+.case-lede{font-size:clamp(1.3rem,2.2vw,2.3rem);line-height:1.25;max-width:41ch;color:var(--muted)}
+.case-points{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
+.case-points span{font-size:clamp(1.05rem,1.4vw,1.4rem);padding:.7rem 1rem;border:1px solid var(--line);border-radius:99px;color:var(--lime)}
+.slide-vision h2{margin-bottom:.5rem}.slide-vision .case-lede{font-size:clamp(1.1rem,1.7vw,1.75rem);max-width:62ch;margin-bottom:.5rem}
+.vision-gallery{margin-top:1rem}.vision-gallery img{height:clamp(180px,36vh,370px)}
+.has-media .mica-gallery,.has-media .vision-gallery{grid-template-columns:1fr}.has-media .mica-gallery img,.has-media .vision-gallery img{height:18vh}.has-media .knowledge-columns,.has-media .language-fields{grid-template-columns:1fr}
+@media(max-width:760px){.mica-gallery,.vision-gallery{gap:.5rem}.mica-gallery img,.vision-gallery img{height:24vh}.knowledge-columns,.language-fields{grid-template-columns:1fr}.definition{padding:1rem}.slide-solari blockquote,.slide-moria blockquote{font-size:clamp(1.2rem,4vw,1.7rem)}}
