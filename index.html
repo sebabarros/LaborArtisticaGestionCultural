@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#101421">
   <meta name="description" content="Clase de Saga Barros sobre labor artística y gestión cultural: trayectorias, herramientas profesionales, industrias culturales, traducción entre sectores, vínculos y liderazgo.">
   <title>Labor artística y gestión cultural · Saga Barros</title>
-    <link rel="stylesheet" href="styles.css?v=20261017-b4">
-    <script src="script.js?v=20261017-b4" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261017-roles">
+    <script src="script.js?v=20261017-roles" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#slide-1">Ir a la presentación</a>
@@ -344,12 +344,50 @@
       </div>
       <aside class="speaker-notes">Cerrar con énfasis: «APRENDAN INGLÉS E IA». Vincular el inglés con la posibilidad de conversar con más personas y acceder a materiales de otros contextos. Vincular la IA con conocer fundamentos, pedir con claridad y evaluar resultados, como vimos en el primer bloque. Son invitaciones de la clase, no una promesa de empleo o éxito automático.</aside>
     </section>
+    <section class="slide slide-roleplay" id="ejercicio-roles" hidden>
+      <div class="slide-inner">
+        <p class="eyebrow">Ejercicio final · de a dos</p>
+        <div class="roleplay-heading">
+          <h2>Distintos intereses.<br><span>Un proyecto en común.</span></h2>
+          <button id="roll-all" class="primary-button" type="button">Tirar los tres dados</button>
+        </div>
+        <p class="roleplay-intro">Cada une representa un rol. Negocien cómo llevar adelante el proyecto atendiendo los intereses de ambas partes.</p>
+        <div class="roleplay-dice">
+          <article class="roleplay-card" data-die="0" aria-labelledby="role-one-label">
+            <h3 id="role-one-label">Participante 1 <span>9 roles</span></h3>
+            <p class="die-result" id="role-one-result">¿Qué rol te toca?</p>
+            <p class="die-hint" id="role-one-hint">Tirá el dado para descubrir desde qué lugar vas a negociar.</p>
+            <button class="roll-die" type="button" data-roll="0" aria-controls="role-one-result role-one-hint"><span class="die-icon" aria-hidden="true">⚀</span> Tirar rol 1</button>
+          </article>
+          <article class="roleplay-card" data-die="1" aria-labelledby="role-two-label">
+            <h3 id="role-two-label">Participante 2 <span>9 roles</span></h3>
+            <p class="die-result" id="role-two-result">¿Qué rol te toca?</p>
+            <p class="die-hint" id="role-two-hint">Tirá el dado para descubrir desde qué lugar vas a negociar.</p>
+            <button class="roll-die" type="button" data-roll="1" aria-controls="role-two-result role-two-hint"><span class="die-icon" aria-hidden="true">⚁</span> Tirar rol 2</button>
+          </article>
+          <article class="roleplay-card" data-die="2" aria-labelledby="project-label">
+            <h3 id="project-label">Proyecto compartido <span>7 proyectos</span></h3>
+            <p class="die-result" id="project-result">¿Qué van a resolver?</p>
+            <p class="die-hint" id="project-hint">Tiren el dado y definan un contexto concreto para el proyecto.</p>
+            <button class="roll-die" type="button" data-roll="2" aria-controls="project-result project-hint"><span class="die-icon" aria-hidden="true">⚂</span> Tirar proyecto</button>
+          </article>
+        </div>
+        <p class="roleplay-help">Pueden tirar cada dado por separado. Los roles de la pareja siempre son distintos; las pistas son un punto de partida para construir el personaje.</p>
+        <ol class="roleplay-steps">
+          <li><strong>1. Construí tu posición</strong><p>¿Qué necesitás conseguir? ¿Qué podés aportar? ¿Qué podés ceder y qué es indispensable?</p></li>
+          <li><strong>2. Negocien una propuesta</strong><p>Escuchen a la otra parte y acuerden una acción, los recursos necesarios y quién se ocupa de cada cosa.</p></li>
+          <li><strong>3. Compartan el resultado</strong><p>Expliquen qué gana cada une, qué concesiones hicieron y qué tensión quedó pendiente.</p></li>
+        </ol>
+        <p id="roleplay-announcement" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+      <aside class="speaker-notes">Armar parejas y tirar los tres dados una vez por pareja. Cada participante interpreta a una persona con intereses propios dentro del proyecto sorteado. Las pistas de los roles son posibilidades, no descripciones universales: pedir que inventen una trayectoria y un contexto concreto, evitando caricaturas. Antes de dialogar, cada une define un objetivo, un aporte y una condición indispensable. Luego negocian una propuesta viable, con recursos, responsabilidades y un primer paso. Si el proyecto parece lejano al rol, identificar por qué esa persona estaría interesada o se vería afectada. No se supone que dos personas puedan resolver todo: pueden señalar qué otros actores haría falta sumar. En la puesta en común, preguntar qué lenguaje ayudó a entenderse, qué intereses pudieron compatibilizar y qué tensión sigue abierta. Si no hay acuerdo, explicar el desacuerdo y qué haría falta para avanzar. Se pueden volver a tirar los dados por separado para nuevas rondas.</aside>
+    </section>
   </main>
 
   <footer class="bottombar">
     <button id="prev-button" type="button" aria-label="Diapositiva anterior">← Anterior</button>
     <div class="progress-wrap" aria-hidden="true"><span id="progress-bar"></span></div>
-    <span id="slide-counter" aria-live="polite">1 / 28</span>
+    <span id="slide-counter" aria-live="polite">1 / 29</span>
     <button id="next-button" type="button" aria-label="Diapositiva siguiente">Siguiente →</button>
   </footer>
 
@@ -395,3 +433,4 @@
   </aside>
 </body>
 </html>
+

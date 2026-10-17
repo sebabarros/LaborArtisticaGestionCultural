@@ -131,3 +131,43 @@ dialog,.notes-panel{background:#182034;color:var(--ink);border:1px solid var(--l
 .slide-examples,.slide-languages{padding-top:clamp(1.5rem,3vw,3rem);padding-bottom:clamp(1.5rem,3vw,3rem)}
 @media(max-width:900px){.vision-goals-layout{grid-template-columns:1fr}.vision-goals-photo img{height:26vh}}
 @media(max-width:760px){.generalism-columns,.work-examples,.balance-pillars,.language-fields-four,.vision-goals{grid-template-columns:1fr}.balance-pillars>div{min-height:0}.slide-languages .language-common{font-size:1.05rem}}
+
+/* Final paired role-play exercise. */
+.slide-roleplay{align-content:start;padding-block:clamp(1.5rem,3vh,3rem)}
+.slide-roleplay .eyebrow{margin-bottom:.7rem}
+.roleplay-heading{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.slide-roleplay h2{font-size:clamp(2.1rem,3.8vw,4rem);max-width:24ch;margin-bottom:0;line-height:1.05}
+.roleplay-heading .primary-button{flex-shrink:0;min-height:44px}
+.roleplay-intro{font-size:clamp(1rem,1.35vw,1.4rem);color:var(--muted);max-width:90ch;margin:1rem 0 1.2rem}
+.roleplay-dice{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.roleplay-card{--die-color:var(--lime);display:flex;flex-direction:column;min-width:0;padding:1.1rem 1.2rem;border:1px solid var(--line);border-top:4px solid var(--die-color);border-radius:12px;background:rgba(246,241,231,.04)}
+.roleplay-card:nth-child(2){--die-color:var(--blue)}
+.roleplay-card:nth-child(3){--die-color:var(--coral)}
+.roleplay-card h3{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.4rem;font-size:.9rem;color:var(--die-color);margin:0 0 1rem}
+.roleplay-card h3 span{font-size:.75rem;color:var(--muted);font-weight:500}
+.die-result{font-size:clamp(1.35rem,2vw,2rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;min-height:2.25em;margin:0 0 .65rem;overflow-wrap:break-word}
+.die-hint{font-size:clamp(.95rem,1.1vw,1.1rem);color:var(--muted);margin:0 0 1rem;flex:1}
+.roll-die{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;min-height:48px;border:1px solid var(--die-color);border-radius:7px;background:transparent;color:var(--die-color);font-weight:750;cursor:pointer}
+.roll-die:hover{background:rgba(246,241,231,.08)}
+.roll-die:active{background:rgba(246,241,231,.14)}
+.die-icon{display:inline-block;font-family:system-ui,sans-serif;font-size:2rem;line-height:1}
+.die-icon.is-rolling{animation:roll-die .4s ease-out}
+@keyframes roll-die{0%{transform:rotate(0) scale(.85)}40%{transform:rotate(-22deg) scale(1.15)}75%{transform:rotate(15deg)}100%{transform:rotate(0) scale(1)}}
+.roleplay-help{font-size:.85rem;color:var(--muted);margin:.8rem 0 1.2rem;max-width:115ch}
+.roleplay-steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem;margin:0;padding:0}
+.roleplay-steps li{border-top:1px solid var(--line);padding-top:.8rem}
+.roleplay-steps strong{font-size:clamp(1rem,1.2vw,1.2rem);color:var(--ink)}
+.roleplay-steps p{font-size:clamp(.95rem,1.1vw,1.1rem);color:var(--muted);margin:.4rem 0 0}
+.has-media .roleplay-heading{align-items:flex-start;flex-direction:column}
+.has-media .roleplay-dice,.has-media .roleplay-steps{grid-template-columns:1fr}
+@media(max-width:760px){
+  .roleplay-heading{align-items:flex-start;flex-direction:column;gap:1rem}
+  .roleplay-dice,.roleplay-steps{grid-template-columns:1fr}
+  .roleplay-card{padding:1rem}
+  .die-result{min-height:0;font-size:1.6rem}
+  .die-hint{font-size:1rem}
+  .roleplay-help{line-height:1.5}
+}
+@media(prefers-reduced-motion:reduce){.die-icon.is-rolling{animation:none}}
+@media print{.roleplay-heading .primary-button,.roll-die{display:none}}
+

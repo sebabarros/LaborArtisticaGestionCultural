@@ -118,3 +118,69 @@ document.addEventListener('keydown',event=>{
 window.addEventListener('hashchange',readHash);
 wrapSlides();toggleMediaFields();
 (async()=>{let embedded={};if(embeddedMedia)try{embedded=JSON.parse(embeddedMedia.textContent)||{}}catch{};try{const saved=await readSavedMedia();mediaBySlide=saved===undefined?embedded:saved}catch{mediaBySlide=embedded};slides.forEach(renderMedia);readHash()})();
+
+// Final exercise: independent dice for two different roles and one shared project.
+function initRoleExercise(){
+  const exercise=document.getElementById('ejercicio-roles');
+  if(!exercise)return;
+  const roles=[
+    {name:'Artista visual',hint:'Posibles intereses: libertad creativa, reconocimiento de autoría y remuneración por tu trabajo.'},
+    {name:'Gestor cultural',hint:'Posibles intereses: articular a las partes, sostener los vínculos y conseguir que el proyecto se concrete.'},
+    {name:'Funcionarix de cultura',hint:'Posibles intereses: ampliar el acceso a la cultura, fortalecer al sector y dar visibilidad a la gestión.'},
+    {name:'Funcionarix de turismo',hint:'Posibles intereses: atraer visitantes, promover la identidad local y generar actividad fuera de temporada.'},
+    {name:'Empresarix joven',hint:'Posibles intereses: probar un modelo nuevo, llegar a otros públicos y hacer crecer tu empresa.'},
+    {name:'Empresarix vieja escuela',hint:'Posibles intereses: cuidar la rentabilidad, trabajar con acuerdos previsibles y sostener relaciones de confianza.'},
+    {name:'Funcionarix de economía',hint:'Posibles intereses: cuidar el presupuesto, generar empleo y mostrar resultados económicos medibles.'},
+    {name:'Trabajador social',hint:'Posibles intereses: incluir a la comunidad, atender necesidades del territorio y sostener su participación.'},
+    {name:'Inversionista',hint:'Posibles intereses: recuperar la inversión, evaluar riesgos y acordar plazos y resultados.'}
+  ];
+  const projects=[
+    {name:'Mercado de artes',hint:'Definan qué se ofrece, a quién convoca y cómo se conectan artistas, públicos y compradores.'},
+    {name:'Ley de fomento de la industria',hint:'Definan qué industria quieren impulsar, a quién beneficia y cómo se financia el fomento.'},
+    {name:'Producción audiovisual',hint:'Definan qué quieren producir, para qué público y cómo conseguir recursos y circulación.'},
+    {name:'Evento empresarial',hint:'Definan a quién convoca, qué oportunidades genera y quién aporta los recursos.'},
+    {name:'Creación de trayecto educativo',hint:'Definan para quién es, qué aprendizajes propone y cómo se sostiene y se vincula con el territorio.'},
+    {name:'Evento estatal',hint:'Definan su objetivo público, quiénes participan y cómo se usan y justifican los recursos.'},
+    {name:'Festival de música',hint:'Definan la programación, los públicos y cómo sostener la producción y el acceso.'}
+  ];
+  const selected=[null,null,null];
+  const resultIds=['role-one-result','role-two-result','project-result'];
+  const hintIds=['role-one-hint','role-two-hint','project-hint'];
+  const labels=['Participante 1','Participante 2','Proyecto'];
+  const announcement=document.getElementById('roleplay-announcement');
+  function pick(items,excluded){
+    const available=items.filter(item=>!excluded.includes(item));
+    return available[Math.floor(Math.random()*available.length)];
+  }
+  function renderDie(index){
+    document.getElementById(resultIds[index]).textContent=selected[index].name;
+    document.getElementById(hintIds[index]).textContent=selected[index].hint;
+    const icon=exercise.querySelector(`[data-die="${index}"] .die-icon`);
+    // Restart only this die's decorative animation; results appear immediately.
+    icon.classList.remove('is-rolling');
+    void icon.offsetWidth;
+    icon.classList.add('is-rolling');
+  }
+  function announce(indices){
+    announcement.textContent=indices.map(index=>`${labels[index]}: ${selected[index].name}. ${selected[index].hint}`).join(' ');
+  }
+  function roll(index){
+    const items=index===2?projects:roles;
+    const excluded=index===2?[selected[2]]:[selected[index],selected[1-index]];
+    selected[index]=pick(items,excluded);
+    renderDie(index);
+    announce([index]);
+  }
+  exercise.querySelectorAll('[data-roll]').forEach(button=>{
+    button.addEventListener('click',()=>roll(Number(button.dataset.roll)));
+  });
+  document.getElementById('roll-all').addEventListener('click',()=>{
+    selected[0]=pick(roles,[selected[0]]);
+    selected[1]=pick(roles,[selected[0],selected[1]]);
+    selected[2]=pick(projects,[selected[2]]);
+    [0,1,2].forEach(renderDie);
+    announce([0,1,2]);
+  });
+}
+initRoleExercise();
+
