@@ -10,6 +10,17 @@ dialog,.notes-panel{background:#182034;color:var(--ink);border:1px solid var(--l
 @media print{html,body{height:auto;overflow:visible;background:#fff}.topbar,.bottombar,dialog,.notes-panel{display:none!important}#deck{position:static}.slide,.slide[hidden]{position:relative;display:grid;min-height:100vh;page-break-after:always;break-after:page;color:var(--ink);print-color-adjust:exact;-webkit-print-color-adjust:exact}.slide-inner{animation:none!important}}
 
 /* Optional photos and videos added from the presentation toolbar. */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#slide-15 h2{font-size:clamp(4rem,8.8vw,8.5rem)}
+.slide-languages h2,.slide-project h2{font-size:clamp(2.8rem,5vw,5.5rem);max-width:24ch;margin-bottom:1.4rem}
+.language-table{border-collapse:collapse;width:100%;max-width:1140px;font-size:clamp(1.1rem,1.8vw,1.8rem);line-height:1.25}
+.language-table th,.language-table td{border-top:1px solid var(--line);padding:.8rem 0;vertical-align:top;text-align:left}
+.language-table th{width:25%;padding-right:1.5rem;color:var(--blue);font-weight:750}.language-table td{color:var(--muted)}
+.slide-project .sequence{margin-top:1.3rem}.slide-project .sequence li{grid-template-columns:minmax(190px,27%) 1fr}
+.slide-delegation h2{font-size:clamp(4rem,8vw,8.6rem);max-width:14ch}.slide-final h2{max-width:20ch;font-size:clamp(3.8rem,7.5vw,8rem)}
+.slide-final .two-column{margin-top:2rem}.slide-final .two-column p{font-size:clamp(1.3rem,2vw,2rem)}.slide-final .ending-next{margin-top:2rem}
+.has-media .language-table{font-size:clamp(1rem,1.2vw,1.25rem)}.has-media .language-table th{width:30%}.slide-project .has-media .sequence li{grid-template-columns:1fr}
+@media(max-width:760px){.language-table th{width:30%;padding-right:.8rem}.slide-project .sequence li{grid-template-columns:1fr}.slide-delegation h2,.slide-final h2{font-size:clamp(3.3rem,10vw,5.5rem)}}
 .slide-copy{min-width:0}.slide-media-stage[hidden],.media-fields[hidden],.form-error[hidden]{display:none}
 .slide-inner.has-media{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,48%);align-items:center;gap:clamp(1.5rem,4vw,4.5rem)}
 .has-media .slide-copy{min-width:0}.has-media h1{font-size:clamp(3.1rem,6vw,6rem)}.has-media h2,.has-media .slide-section h2{font-size:clamp(2.6rem,4.8vw,5.2rem)}
