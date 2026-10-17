@@ -1,11 +1,11 @@
 # Labor artística y gestión cultural
 
-Presentación web de Saga Barros: 26 diapositivas con la apertura y dos bloques.
+Presentación web de Saga Barros: 28 diapositivas con la apertura y dos bloques.
 
-- **Labor artística:** generalismo e IA, trayectorias profesionales, industrias culturales y economía del conocimiento.
+- **Labor artística:** generalismo y especialización, trayectorias profesionales, herramientas transferibles, industrias culturales y economía del conocimiento. La IA se aborda como una herramienta que amplifica el generalismo.
 - **Gestión cultural:** lenguajes y lógicas de distintos campos, traducción entre sectores, vínculos sostenibles, gestión de proyectos, liderazgo y delegación. Cierre: aprender inglés e IA.
 
-El bloque 2 comienza en la diapositiva 14. Las notas desarrollan los ejemplos y las ideas de la clase. Tras la diapositiva sobre delegación aparecen los casos de «En el Nombre de la Ley» y Visión Norte. La expresión «el 80% es un exitazo» se refiere a aceptar una forma de trabajo diferente a la propia; el resultado acordado sigue siendo el criterio de evaluación.
+El bloque 2 comienza en la diapositiva 14. Las notas desarrollan los ejemplos y las ideas de la clase. Tras la diapositiva sobre delegación se expone por qué la idea, los vínculos y la ejecución deben ser sólidos, y luego aparecen los casos de «En el Nombre de la Ley» y Visión Norte. La expresión «el 80% es un exitazo» se refiere a aceptar una forma de trabajo diferente a la propia; el resultado acordado sigue siendo el criterio de evaluación.
 
 ## Uso
 

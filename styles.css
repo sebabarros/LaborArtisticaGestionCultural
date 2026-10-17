@@ -77,3 +77,57 @@ dialog,.notes-panel{background:#182034;color:var(--ink);border:1px solid var(--l
 .vision-gallery{margin-top:1rem}.vision-gallery img{height:clamp(180px,36vh,370px)}
 .has-media .mica-gallery,.has-media .vision-gallery{grid-template-columns:1fr}.has-media .mica-gallery img,.has-media .vision-gallery img{height:18vh}.has-media .knowledge-columns,.has-media .language-fields{grid-template-columns:1fr}
 @media(max-width:760px){.mica-gallery,.vision-gallery{gap:.5rem}.mica-gallery img,.vision-gallery img{height:24vh}.knowledge-columns,.language-fields{grid-template-columns:1fr}.definition{padding:1rem}.slide-solari blockquote,.slide-moria blockquote{font-size:clamp(1.2rem,4vw,1.7rem)}}
+
+/* Generalism, transferable work and the expanded cultural management cases. */
+.slide-generalism h2{font-size:clamp(3rem,5.4vw,5.7rem);max-width:24ch;margin-bottom:1.3rem}
+.generalism-columns{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;max-width:1150px}
+.generalism-columns>div{padding:1rem 1.3rem;border-top:3px solid var(--lime);background:rgba(199,244,100,.07)}
+.generalism-columns>div:nth-child(2){border-color:var(--blue);background:rgba(92,200,255,.07)}
+.generalism-columns h3{font-size:clamp(1.25rem,1.8vw,1.8rem);margin:0 0:.5rem;color:var(--lime)}
+.generalism-columns>div:nth-child(2) h3{color:var(--blue)}
+.generalism-columns p{font-size:clamp(1.05rem,1.45vw,1.45rem);color:var(--muted);margin:0}
+.generalism-takeaway{font-size:clamp(1.3rem,1.9vw,1.9rem);max-width:65ch;margin:1.4rem 0 0}
+.ai-aside{font-size:clamp(1rem,1.3vw,1.3rem);max-width:80ch;color:var(--muted);border-top:1px solid var(--line);padding-top:.75rem;margin:.9rem 0 0}
+.slide-examples h2{font-size:clamp(3.2rem,5.7vw,6rem);max-width:19ch;margin-bottom:1.2rem}
+.work-examples{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:1120px}
+.work-examples>div{padding:1rem 1.2rem;border-left:4px solid var(--lime);background:rgba(199,244,100,.07)}
+.work-examples h3{font-size:clamp(1.25rem,1.8vw,1.9rem);margin:0 0:.35rem;color:var(--lime)}
+.work-examples p{font-size:clamp(1rem,1.3vw,1.3rem);margin:0;color:var(--muted)}
+.knowledge-sectors{display:flex;flex-wrap:wrap;gap:.55rem;list-style:none;padding:0;margin:1.5rem 0 0;max-width:700px}
+.knowledge-sectors li{font-size:clamp(.95rem,1.2vw,1.2rem);padding:.55rem .8rem;color:var(--lime);border:1px solid rgba(199,244,100,.4);border-radius:999px}
+.slide-languages h2{font-size:clamp(2.6rem,4.4vw,4.8rem);margin-bottom:.75rem}
+.slide-languages .language-common{font-size:clamp(1.1rem,1.55vw,1.55rem);max-width:75ch;margin-bottom:.8rem}
+.language-fields-four{grid-template-columns:1fr 1fr;gap:.7rem;max-width:1180px}
+.language-fields-four>div{padding:.7rem 1rem}
+.language-fields-four>div:nth-child(3){border-color:var(--coral);background:rgba(255,131,100,.07)}
+.language-fields-four>div:nth-child(4){border-color:var(--ink);background:rgba(246,241,231,.06)}
+.language-fields-four>div:nth-child(3) h3{color:var(--coral)}
+.language-fields-four>div:nth-child(4) h3{color:var(--ink)}
+.language-fields-four h3{font-size:clamp(1.15rem,1.5vw,1.5rem);margin-bottom:.2rem}
+.language-fields-four p{font-size:clamp(.95rem,1.15vw,1.15rem)}
+.slide-languages .language-bridge{font-size:clamp(.95rem,1.2vw,1.2rem);margin-top:.7rem;padding-top:.6rem}
+.slide-balance h2{font-size:clamp(3.1rem,5.8vw,6rem);max-width:24ch;margin-bottom:.7rem}
+.balance-lede{font-size:clamp(1.5rem,2.3vw,2.3rem);color:var(--muted);margin-bottom:1.3rem}
+.balance-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1150px}
+.balance-pillars>div{min-height:150px;border-top:5px solid var(--lime);background:rgba(199,244,100,.08);padding:1rem 1.2rem}
+.balance-pillars>div:nth-child(2){border-color:var(--blue);background:rgba(92,200,255,.08)}
+.balance-pillars>div:nth-child(3){border-color:var(--coral);background:rgba(255,131,100,.08)}
+.balance-pillars span{display:block;color:var(--muted);font-size:.9rem;margin-bottom:.35rem}
+.balance-pillars strong{display:block;font-size:clamp(1.4rem,2vw,2rem)}
+.balance-pillars p{color:var(--muted);font-size:clamp(1rem,1.2vw,1.2rem);margin:.5rem 0 0}
+.balance-conclusion{font-size:clamp(1.25rem,1.65vw,1.65rem);max-width:75ch;margin:1.3rem 0 0}
+.vision-goals-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);gap:clamp(1.5rem,3vw,3rem);align-items:center}
+.slide-vision-goals h2{font-size:clamp(2.7rem,4.4vw,4.6rem);max-width:19ch;margin-bottom:1rem}
+.vision-goals{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.vision-goals>div{padding:.7rem .9rem;border-left:3px solid var(--lime);background:rgba(199,244,100,.07)}
+.vision-goals>div:nth-child(2){border-color:var(--blue);background:rgba(92,200,255,.07)}
+.vision-goals>div:nth-child(3){border-color:var(--coral);background:rgba(255,131,100,.07)}
+.vision-goals>div:nth-child(4){border-color:var(--ink);background:rgba(246,241,231,.06)}
+.vision-goals strong{font-size:clamp(1.1rem,1.4vw,1.4rem);color:var(--ink)}
+.vision-goals p{font-size:clamp(.95rem,1.1vw,1.1rem);line-height:1.25;color:var(--muted);margin:.3rem 0 0}
+.vision-goals-photo{margin:0}.vision-goals-photo img{display:block;width:100%;height:min(56vh,560px);object-fit:cover;object-position:center;border-radius:10px;border:1px solid var(--line)}
+.vision-goals-photo figcaption{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+.has-media .generalism-columns,.has-media .work-examples,.has-media .balance-pillars,.has-media .vision-goals{grid-template-columns:1fr}
+.slide-examples,.slide-languages{padding-top:clamp(1.5rem,3vw,3rem);padding-bottom:clamp(1.5rem,3vw,3rem)}
+@media(max-width:900px){.vision-goals-layout{grid-template-columns:1fr}.vision-goals-photo img{height:26vh}}
+@media(max-width:760px){.generalism-columns,.work-examples,.balance-pillars,.language-fields-four,.vision-goals{grid-template-columns:1fr}.balance-pillars>div{min-height:0}.slide-languages .language-common{font-size:1.05rem}}
